@@ -1,0 +1,5 @@
+.\Convert-fixedwidth-to-csv.ps1 -fwfile '..\valuedata\REC10_TRIM2013\*.TXT' -formatfile '..\valuedata\REC10_TRIM2013\*.csv'
+.\Convert-fixedwidth-to-csv.ps1 -fwfile '..\valuedata\REC20_TRIM2013\*.TXT' -formatfile '..\valuedata\REC20_TRIM2013\*.csv'
+.\Convert-fixedwidth-to-csv.ps1 -fwfile '..\valuedata\REC35_TRIM2013\*.TXT' -formatfile '..\valuedata\REC35_TRIM2013\*.csv'
+.\Convert-fixedwidth-to-csv.ps1 -fwfile '..\valuedata\REC36_TRIM2013\*.TXT' -formatfile '..\valuedata\REC36_TRIM2013\*.csv'
+.\Convert-fixedwidth-to-csv.ps1 -fwfile '..\valuedata\REC40_TRIM2013\*.TXT' -formatfile '..\valuedata\REC40_TRIM2013\*.csv'
