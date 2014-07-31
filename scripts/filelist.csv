@@ -1,0 +1,5 @@
+infile,outfile,format,table
+C:\git\propertymap\valuedata\2012\REC10_TRIM2012.TXT,C:\git\propertymap\valuedata\2012\REC10_TRIM2012.csv,10,raw_rec10_12
+C:\git\propertymap\valuedata\2012\REC35_TRIM2012.TXT,C:\git\propertymap\valuedata\2012\REC35_TRIM2012.csv,35,raw_rec35_12
+C:\git\propertymap\valuedata\2012\REC36_COPY.TXT,C:\git\propertymap\valuedata\2012\REC36_COPY.csv,36,raw_rec36_12
+C:\git\propertymap\valuedata\2012\REC40_TRIM2012.TXT,C:\git\propertymap\valuedata\2012\REC40_TRIM2012.csv,40,raw_rec40_12
