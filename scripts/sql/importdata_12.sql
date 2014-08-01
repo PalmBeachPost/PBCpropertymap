@@ -246,4 +246,11 @@ BEGIN;
 			ELSE NULLIF(assessment23_amount, '0.0')::numeric
 		END
 	FROM raw_rec35_12;
+
+	INSERT INTO tax_12
+	SELECT
+	 pcn,
+	 sum(amount)
+	FROM assessments_12
+	GROUP BY pcn;
 COMMIT;

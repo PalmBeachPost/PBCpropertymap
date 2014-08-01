@@ -17,6 +17,9 @@ if ($nuke -eq 1)
     Add-content status.txt "$(Get-Date -f o) : Creating database $db"
     PSQL -U $u -h localhost -p $p -w -c "drop database if exists $db"
     CREATEDB -U $u $db
+    PSQL -U $u -h localhost -p $p -w -c "CREATE EXTENSION IF NOT EXISTS postgis WITH SCHEMA public"
+    PSQL -U $u -h localhost -p $p -w -c "CREATE SCHEMA topology AUTHORIZATION $u"
+    PSQL -U $u -h localhost -p $p -w -c "CREATE EXTENSION IF NOT EXISTS postgis_topology WITH SCHEMA topology"
 
     #create all lookup tables here
     PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/createCommonTables.sql
@@ -42,4 +45,3 @@ if ($nuke -eq 1)
 PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/importdata_13.sql
 PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/importdata_12.sql
 
- 

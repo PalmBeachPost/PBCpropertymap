@@ -240,4 +240,12 @@ BEGIN;
 	);
 	CREATE INDEX ON assessments_12(pcn);
 	CREATE INDEX ON assessments_12(auth);
+	
+	/*-----------------------------Tax table-------------------------*/
+	DROP TABLE IF EXISTS tax_12 CASCADE;
+	CREATE TABLE IF NOT EXISTS tax_12(
+		pcn varchar REFERENCES property_12(pcn),
+		tax numeric
+	);
+	CREATE INDEX ON tax_12(pcn);
 COMMIT;
