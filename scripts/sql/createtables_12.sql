@@ -216,4 +216,28 @@ BEGIN;
 			petitionNo varchar,
 			exemptionCaseNo varchar
 			);
+	/*-----------------------------Property table-------------------------*/
+	DROP TABLE IF EXISTS property_12 CASCADE;
+	CREATE TABLE IF NOT EXISTS property_12(
+		pcn varchar PRIMARY KEY,
+		propertyUse varchar REFERENCES PropUseLookup(code),
+		name varchar,
+		address1 varchar,
+		address2 varchar,
+		address3 varchar,
+		zip varchar,
+		marketVal numeric
+	);
+	CREATE INDEX ON property_12(marketVal);
+
+	/*-----------------------------Assessments table-------------------------*/
+	DROP TABLE IF EXISTS assessments_12 CASCADE;
+	CREATE TABLE IF NOT EXISTS assessments_12(
+		pcn varchar REFERENCES property_12(pcn),
+		type varchar,
+		auth varchar,
+		amount numeric
+	);
+	CREATE INDEX ON assessments_12(pcn);
+	CREATE INDEX ON assessments_12(auth);
 COMMIT;
