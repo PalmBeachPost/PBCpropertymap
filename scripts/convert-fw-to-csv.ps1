@@ -163,6 +163,6 @@ If(ps excel){
      kill -name excel
 }
 
-# make sure it is UTF8 without BOM
-$content = get-content -path $outputFile
-$content | out-file $outputFile -encoding utf8  
+# Reopen and save with correct encoding to make sure it is UTF8 without BOM
+(get-content -path $outputFile)|
+    out-file $outputFile -encoding utf8  
