@@ -8,6 +8,9 @@ CREATE TABLE rollup_12
   unitCount int,
   mktVal numeric,
   tax numeric,
+  propCode varchar,
+  propDesc varchar,
+  primOwner varchar,
   PRIMARY KEY (parid)
 );
 
@@ -16,11 +19,15 @@ INSERT INTO rollup_12
     parid,
     1, 
     marketval,
-    tax
+    tax,
+    code,
+    descr,
+    name
   FROM
   (SELECT DISTINCT parid from parcels) p 
-  INNER JOIN property_12 pr ON p.parid = pr.pcn
-  INNER JOIN tax_12 t ON pr.pcn =t.pcn;
+  INNER JOIN property_13 pr ON p.parid = pr.pcn
+  INNER JOIN tax_13 t ON pr.pcn = t.pcn
+  INNER JOIN propuselookup pul ON pr.propertyuse = pul.code;
 
 DELETE FROM rollup_12
 WHERE parid IN 
@@ -31,16 +38,23 @@ INSERT INTO rollup_12
    parid,
    count(pcn),
    Avg(marketval),
-   Avg(tax)
+   Avg(tax),
+   Max(code),
+   Max(descr),
+   'Multiple owners'
    FROM
     (SELECT
      p.parid,
      c.pcn,
      pr.marketval,
-     t.tax
+     t.tax,
+     pul.code as code,
+     pul.descr as descr
     FROM
      parcels p
      INNER JOIN condodata c ON p.parid=c.condo_pcn
-     INNER JOIN property_12 pr ON pr.pcn = c.pcn
-     INNER JOIN tax_12 t ON t.pcn = pr.pcn) tab
+     INNER JOIN property_13 pr ON pr.pcn = c.pcn
+     INNER JOIN tax_13 t ON t.pcn = pr.pcn
+     INNER JOIN propuselookup pul ON pr.propertyuse = pul.code
+     ) tab
   GROUP BY parid;
