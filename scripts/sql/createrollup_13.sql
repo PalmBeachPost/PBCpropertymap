@@ -14,6 +14,9 @@ CREATE TABLE rollup_13
   PRIMARY KEY (parid)
 );
 
+CREATE INDEX idx_parid ON rollup_13(parid);
+CLUSTER rollup_13 USING idx_parid;
+
 INSERT INTO rollup_13
   SELECT
     parid,
