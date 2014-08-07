@@ -2,6 +2,7 @@ param(
     $u ='postgres',
     $p = 5432,
     $db = 'propertydb',
+    $convert = 0,
     $file
 )
 

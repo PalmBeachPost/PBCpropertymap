@@ -1,8 +1,8 @@
-SET CLIENT_ENCODING TO UTF8;
+﻿SET CLIENT_ENCODING TO UTF8;
 SET STANDARD_CONFORMING_STRINGS TO ON;
 
-DROP TABLE IF EXISTS rollup_12;
-CREATE TABLE rollup_12
+DROP TABLE IF EXISTS rollup_14;
+CREATE TABLE rollup_14
 (
   parid varchar,
   unitCount int,
@@ -14,10 +14,10 @@ CREATE TABLE rollup_12
   PRIMARY KEY (parid)
 );
 
-CREATE INDEX idx_parid_12 ON rollup_12(parid);
-CLUSTER rollup_12 USING idx_parid_12;
+CREATE INDEX idx_parid_14 ON rollup_14(parid);
+CLUSTER rollup_14 USING idx_parid_14;
 
-INSERT INTO rollup_12
+INSERT INTO rollup_14
   SELECT
     parid,
     1, 
@@ -28,15 +28,15 @@ INSERT INTO rollup_12
     name
   FROM
   (SELECT DISTINCT parid from parcels) p 
-  INNER JOIN property_12 pr ON p.parid = pr.pcn
-  INNER JOIN tax_12 t ON pr.pcn = t.pcn
+  INNER JOIN property_14 pr ON p.parid = pr.pcn
+  INNER JOIN tax_14 t ON pr.pcn = t.pcn
   INNER JOIN propuselookup pul ON pr.propertyuse = pul.code;
 
-DELETE FROM rollup_12
+DELETE FROM rollup_14
 WHERE parid IN 
 (SELECT pcn FROM condodata);
 
-INSERT INTO rollup_12
+INSERT INTO rollup_14
   SELECT
    parid,
    count(pcn),
@@ -56,8 +56,8 @@ INSERT INTO rollup_12
     FROM
      parcels p
      INNER JOIN condodata c ON p.parid=c.condo_pcn
-     INNER JOIN property_12 pr ON pr.pcn = c.pcn
-     INNER JOIN tax_12 t ON t.pcn = pr.pcn
+     INNER JOIN property_14 pr ON pr.pcn = c.pcn
+     INNER JOIN tax_14 t ON t.pcn = pr.pcn
      INNER JOIN propuselookup pul ON pr.propertyuse = pul.code
      ) tab
   GROUP BY parid;

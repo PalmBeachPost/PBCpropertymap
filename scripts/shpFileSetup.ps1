@@ -13,10 +13,10 @@ if(!$exists){
 }
 PSQL -U $u -h localhost -p $p -w -d $db -f ../parcelshape/parcels.sql
 
-$exists = test-path '../parcelshape/condos.sql'
+<#$exists = test-path '../parcelshape/condos.sql'
 if(!$exists){
   cd '../parcelshape'  
   shp2pgsql.exe -W "LATIN1" -n .\condodata.dbf > condos.sql
   cd '../scripts'
 }
-PSQL -U $u -h localhost -p $p -w -d $db -f ../parcelshape/condos.sql
+PSQL -U $u -h localhost -p $p -w -d $db -f ../parcelshape/condos.sql#>

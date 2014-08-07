@@ -1,4 +1,4 @@
-﻿SET CLIENT_ENCODING TO UTF8;
+SET CLIENT_ENCODING TO UTF8;
 SET STANDARD_CONFORMING_STRINGS TO ON;
 
 DROP TABLE IF EXISTS rollup_13;
@@ -14,8 +14,8 @@ CREATE TABLE rollup_13
   PRIMARY KEY (parid)
 );
 
-CREATE INDEX idx_parid ON rollup_13(parid);
-CLUSTER rollup_13 USING idx_parid;
+CREATE INDEX idx_parid_13 ON rollup_13(parid);
+CLUSTER rollup_13 USING idx_parid_13;
 
 INSERT INTO rollup_13
   SELECT
