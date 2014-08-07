@@ -5,7 +5,7 @@ param(
     $table
 )
 $outpath = '..\propertyShp13'
-pgsql2shp.exe -h localhost -u $u -p $p -f "propertyshp_12_13" $db SELECT    
+pgsql2shp.exe -h localhost -u $u -p $p -f "propertyshp_12_13" $db "SELECT    
   r13.parid,
   r13.unitcount,
   r13.mktval AS mkt13,
