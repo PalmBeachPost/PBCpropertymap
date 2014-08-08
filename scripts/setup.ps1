@@ -28,10 +28,12 @@ if ($nuke -eq 1)
     # create tables per year. Add as required
     Add-content status.txt "$(Get-Date -f o) : Creating tables"
     PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/createTables_12.sql
-    PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/createTables_13.sql  
+    PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/createTables_13.sql
+    PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/createTables_14.sql 
 
     PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/importdata_13.sql
-    PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/importdata_12.sql  
+    PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/importdata_12.sql
+    PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/importdata_14.sql
 }
 
 #----------------------------IMPORTANT------------------------------------
@@ -43,7 +45,7 @@ if ($nuke -eq 1)
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 # ADD A LINE here
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/createTables_14.sql
+#PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/createTables_14.sql -- line left here as example
 
 # import all the files specified in the filelist.csv into the database[BUG #51]
 ./import-year.ps1 -u $u -p $p -db $db -file filelist.csv -convert $convert
@@ -51,5 +53,5 @@ PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/createTables_14.sql
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 # ADD A LINE here
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/importdata_14.sql
+#PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/importdata_14.sql ----line left jhere as example
 

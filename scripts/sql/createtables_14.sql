@@ -105,6 +105,9 @@ BEGIN;
 			assessment22_amount varchar,
 			assessment23_type varchar,
 			assessment23_authority varchar,
+			assessment23_amount varchar,
+			assessment23_type varchar,
+			assessment23_authority varchar,
 			assessment23_amount varchar
 			);
 
