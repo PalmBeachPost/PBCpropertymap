@@ -15,4 +15,4 @@ if($nuke -eq 1){
 # ADD A LINE here
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/createrollup_14.sql
+#PSQL -U $u -h localhost -p $p -w -d $db -f ./sql/createrollup_14.sql

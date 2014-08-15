@@ -24,11 +24,11 @@ pgsql2shp.exe -h localhost -u $u -p $p -f "propertyshp_14_12" $db "SELECT
   )  AS valchh_13_14,
   (
     CASE
-      WHEN r14.mktval <= 0
+      WHEN r13.mktval <= 0
         THEN null
       ELSE
         (r14.mktval-r13.mktval) / r13.mktval
-  END
+    END
   ) AS pctchh_13_14,
   (SELECT geom FROM parcels p WHERE p.parid = r14.parid LIMIT 1) AS geom
 FROM rollup_14 r14 
