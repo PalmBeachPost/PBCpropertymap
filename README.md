@@ -1,6 +1,6 @@
-This project contains code for converting data from property appraiser's office into .shp files that conatins market value and tax value for n number of years
+This project contains code for converting data from property appraiser's office into .shp files that contains market value and tax value for <b>n</b> number of years
 
-##STEP BY STEP INSTRUCTIONS FOR IMPORTING AN ADDITIONAL YEAR OF DATA
+###STEP BY STEP INSTRUCTIONS FOR IMPORTING AN ADDITIONAL YEAR OF DATA
 -----------------------------------------------------------------
 ####DATA PREP
 1. Copy the data into ./valuedata/<year>/
