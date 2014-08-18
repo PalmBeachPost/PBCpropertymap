@@ -1,13 +1,15 @@
-STEP BY STEP INSTRUCTIONS FOR IMPORTING AN ADDITIONAL YEAR OF DATA
+This project contains code for converting data from property appraiser's office into .shp files that conatins market value and tax value for n number of years
+
+##STEP BY STEP INSTRUCTIONS FOR IMPORTING AN ADDITIONAL YEAR OF DATA
 -----------------------------------------------------------------
-DATA PREP
+####DATA PREP
 1. Copy the data into ./valuedata/<year>/
 2. Open sql folder and for each year of data, create a copy of the following files
-```	
-	createtables_XX.sql
-	importdata_XX.sql
-	createrollup_xx.sql
-```
+	```	
+		createtables_XX.sql
+		importdata_XX.sql
+		createrollup_xx.sql
+	```
 3. In the files created in the step above, search and replace _<yearnumber> with the correct one. 
 4. Open filelist.csv and remove all existing lines except header line
 5. Add the new text files in the following format
