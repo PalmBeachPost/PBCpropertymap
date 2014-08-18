@@ -13,13 +13,15 @@ This project contains code for converting data from property appraiser's office 
 3. In the files created in the step above, search and replace _<yearnumber> with the correct one. 
 4. Open filelist.csv and remove all existing lines except header line
 5. Add the new text files in the following format
+	```	
 	fullpath to the current filename, fullpath to the output csv, fileformat (10,35, 40), name of the table the data belongs to
-TIP: We only care about 10,35 and 40
+	```
+TIP: We only care about files 10,35 and 40
 6. Open setup.ps1 and add a line for cerate tables and importdata referencing the sql files that were created in step 2
 	TIP: look for the following runway markers in the scripts for indication on where to add the files
-		#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-		# ADD A LINE here
-		#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		@@@@@@@@@@@@@@@@
+		 ADD A LINE here
+		@@@@@@@@@@@@@@@@
 7. Open createrollups.ps1 and add a line for calling teh createrollup sql script created in step 2
 8. open ./parcelshape folder and replace the shapefiles with the new ones. name it parcels.shp, parcels.dbf etc if it isnt named that
 9. Delete parcels.sql
