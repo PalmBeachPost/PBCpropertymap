@@ -27,18 +27,14 @@ INSERT INTO rollup_14
     descr,
     name
   FROM
-  (SELECT DISTINCT parid from parcels) p 
+  (SELECT DISTINCT parid from parcel) p 
   INNER JOIN property_14 pr ON p.parid = pr.pcn
   INNER JOIN tax_14 t ON pr.pcn = t.pcn
   INNER JOIN propuselookup pul ON pr.propertyuse = pul.code;
 
-DELETE FROM rollup_14
-WHERE parid IN 
-(SELECT pcn FROM condodata);
-
 INSERT INTO rollup_14
-  SELECT
-   parid,
+SELECT
+   subid,
    count(pcn),
    Avg(marketval),
    Avg(tax),
@@ -47,17 +43,16 @@ INSERT INTO rollup_14
    'Multiple owners'
    FROM
     (SELECT
-     p.parid,
-     c.pcn,
+     c.subid,
+     pr.pcn,
      pr.marketval,
      t.tax,
      pul.code as code,
      pul.descr as descr
     FROM
-     parcels p
-     INNER JOIN condodata c ON p.parid=c.condo_pcn
-     INNER JOIN property_14 pr ON pr.pcn = c.pcn
+     condos c 
+     INNER JOIN property_14 pr ON substr(pr.pcn,0,11) LIKE c.subid
      INNER JOIN tax_14 t ON t.pcn = pr.pcn
      INNER JOIN propuselookup pul ON pr.propertyuse = pul.code
      ) tab
-  GROUP BY parid;
+  GROUP BY subid;

@@ -8,15 +8,17 @@ param(
 $exists = test-path '../parcelshape/parcels.sql'
 if(!$exists){
   cd '../parcelshape'  
-  shp2pgsql.exe -I -d -s 2236 Parcels parcels > parcels.sql
+  shp2pgsql.exe -I -s 2236 Parcel_2014 parcel > parcels.sql
   cd '../scripts'
 }
-PSQL -U $u -h localhost -p $p -w -d $db -f ../parcelshape/parcels.sql
+#PSQL -U $u -h localhost -p $p -w -d $db -f ../parcelshape/parcels.sql
 
 $exists = test-path '../parcelshape/condos.sql'
 if(!$exists){
   cd '../parcelshape'  
-  shp2pgsql.exe -W "LATIN1" -n .\condodata.dbf > condos.sql
+  shp2pgsql.exe -I -s 2236 condo_2014 condos > condos.sql
   cd '../scripts'
 }
 PSQL -U $u -h localhost -p $p -w -d $db -f ../parcelshape/condos.sql
+
+PSQL -U $u -h localhost -p $p -w -d $db -f ../sql/mergeshapes.sql
