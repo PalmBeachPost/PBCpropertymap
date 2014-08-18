@@ -10,46 +10,47 @@ This project contains code for converting data from property appraiser's office 
 		importdata_XX.sql
 		createrollup_xx.sql
 	```
-3. In the files created in the step above, search and replace _<yearnumber> with the correct one. 
+3. In the files created in the step above, search and `replace _<yearnumber>` with the correct one. 
 4. Open filelist.csv and remove all existing lines except header line
 5. Add the new text files in the following format
 	```	
 	fullpath to the current filename, fullpath to the output csv, fileformat (10,35, 40), name of the table the data belongs to
 	```
-	
-TIP: We only care about files 10,35 and 40
-6. Open setup.ps1 and add a line for cerate tables and importdata referencing the sql files that were created in step 2
-TIP: look for the following runway markers in the scripts for indication on where to add the files
+**TIP**: We only care about files 10,35 and 40
+6. Open `setup.ps1` and add a line for cerate tables and importdata referencing the sql files that were created in step 2
+**TIP**: look for the following runway markers in the scripts for indication on where to add the files
 	```
 		@@@@@@@@@@@@@@@@
 		 ADD A LINE here
 		@@@@@@@@@@@@@@@@
 	```
-7. Open createrollups.ps1 and add a line for calling teh createrollup sql script created in step 2
-8. open ./parcelshape folder and replace the shapefiles with the new ones. name it parcels.shp, parcels.dbf etc if it isnt named that
-9. Delete parcels.sql
+7. Open `createrollups.ps1` and add a line for calling the createrollup sql script created in step 2
+8. open `./parcelshape` folder and replace the shapefiles with the new ones. name it `parcels.shp`, `parcels.dbf` etc if it isnt named that
+9. Delete `parcels.sql`
 
 
 ####RUNNING SCRIPTS 
 1. Open powershell window
-2. Navigate to this folder  (cd C:\git\propertymap\scripts)
+2. Navigate to the scripts folder 
 3. run the following
 	```
 	./setup.ps1
 	```
 4. If there is no new shp file to import, skip this step. Else once the above process exits, run the following
+	```	
 	./shpFileSetup.ps1
+	```
 5. Once the above process exits, run the following
 	./createrollups.ps1
 
 
-EXPORTING SHAPE FILES
+####EXPORTING SHAPE FILES
 1. Update the script as required in ExportShp.ps1
 2. Run the following
 	./exportshp.ps1
 
 
-CLEANUP
+####CLEANUP
 -------
 No you are not done.
 open each of the .ps1 files you created and move the new lines inside the '$nuke' context
