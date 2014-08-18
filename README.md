@@ -16,22 +16,27 @@ This project contains code for converting data from property appraiser's office 
 	```	
 	fullpath to the current filename, fullpath to the output csv, fileformat (10,35, 40), name of the table the data belongs to
 	```
+	
 TIP: We only care about files 10,35 and 40
 6. Open setup.ps1 and add a line for cerate tables and importdata referencing the sql files that were created in step 2
-	TIP: look for the following runway markers in the scripts for indication on where to add the files
+TIP: look for the following runway markers in the scripts for indication on where to add the files
+	```
 		@@@@@@@@@@@@@@@@
 		 ADD A LINE here
 		@@@@@@@@@@@@@@@@
+	```
 7. Open createrollups.ps1 and add a line for calling teh createrollup sql script created in step 2
 8. open ./parcelshape folder and replace the shapefiles with the new ones. name it parcels.shp, parcels.dbf etc if it isnt named that
 9. Delete parcels.sql
 
 
-RUNNING SCRIPTS 
+####RUNNING SCRIPTS 
 1. Open powershell window
 2. Navigate to this folder  (cd C:\git\propertymap\scripts)
 3. run the following
+	```
 	./setup.ps1
+	```
 4. If there is no new shp file to import, skip this step. Else once the above process exits, run the following
 	./shpFileSetup.ps1
 5. Once the above process exits, run the following
