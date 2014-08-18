@@ -41,28 +41,28 @@ This project contains code for converting data from property appraiser's office 
 	./shpFileSetup.ps1
 	```
 5. Once the above process exits, run the following
-	./createrollups.ps1
+	`./createrollups.ps1`
 
 
 ####EXPORTING SHAPE FILES
 1. Update the script as required in ExportShp.ps1
 2. Run the following
-	./exportshp.ps1
+	`./exportshp.ps1`
 
 
 ####CLEANUP
 -------
 No you are not done.
-open each of the .ps1 files you created and move the new lines inside the '$nuke' context
+open each of the .ps1 files you created and move the new lines inside the `'$nuke'` context
 
 
 STEP BY STEP INSTRUCTIONS FOR IMPORTING NEW SHAPE FILE
 -----------------------------------------------------------------
-1. open ./parcelshape folder and replace the shapefiles with the new ones. name it parcels.shp, parcels.dbf etc if it isnt named that
-2. Delete parcels.sql
+1. open `./parcelshape` folder and replace the shapefiles with the new ones. name it `parcels.shp`, `parcels.dbf` etc if it isnt named that
+2. Delete `parcels.sql`
 3. Open powershell window
-4. Navigate to this folder  (cd C:\git\propertymap\scripts)
+4. Navigate to the scripts folder 
 5. run the following
-	./shpFileSetup.ps1
+	`./shpFileSetup.ps1`
 6. Once the above process exits, run the following
-	./createrollups.ps1 -nuke 1
+	`./createrollups.ps1 -nuke 1`
