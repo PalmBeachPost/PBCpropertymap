@@ -10,7 +10,7 @@ This project contains code for converting data from property appraiser's office 
 		importdata_XX.sql
 		createrollup_xx.sql
 	```
-3. In the files created in the step above, search and `replace _<yearnumber>` with the correct one. 
+3. In the files created in the step above, search and replace _<yearnumber> with the correct one. 
 4. Open filelist.csv and remove all existing lines except header line
 5. Add the new text files in the following format
 	```	

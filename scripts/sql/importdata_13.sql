@@ -25,8 +25,8 @@ BEGIN;
 			WHEN  assessment1_amount ='' THEN 0.0
 			ELSE NULLIF(assessment1_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment2_type,
@@ -35,8 +35,8 @@ BEGIN;
 			WHEN  assessment2_amount ='' THEN 0.0
 			ELSE NULLIF(assessment2_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment3_type,
@@ -45,8 +45,8 @@ BEGIN;
 			WHEN  assessment3_amount ='' THEN 0.0
 			ELSE NULLIF(assessment3_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment4_type,
@@ -55,8 +55,8 @@ BEGIN;
 			WHEN  assessment4_amount ='' THEN 0.0
 			ELSE NULLIF(assessment4_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment5_type,
@@ -65,8 +65,8 @@ BEGIN;
 			WHEN  assessment5_amount ='' THEN 0.0
 			ELSE NULLIF(assessment5_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment6_type,
@@ -75,8 +75,8 @@ BEGIN;
 			WHEN  assessment6_amount ='' THEN 0.0
 			ELSE NULLIF(assessment6_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment7_type,
@@ -85,8 +85,8 @@ BEGIN;
 			WHEN  assessment7_amount ='' THEN 0.0
 			ELSE NULLIF(assessment7_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment8_type,
@@ -95,8 +95,8 @@ BEGIN;
 			WHEN  assessment8_amount ='' THEN 0.0
 			ELSE NULLIF(assessment8_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment9_type,
@@ -105,8 +105,8 @@ BEGIN;
 			WHEN  assessment9_amount ='' THEN 0.0
 			ELSE NULLIF(assessment9_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment10_type,
@@ -115,8 +115,8 @@ BEGIN;
 			WHEN  assessment10_amount ='' THEN 0.0
 			ELSE NULLIF(assessment10_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment11_type,
@@ -125,8 +125,8 @@ BEGIN;
 			WHEN  assessment11_amount ='' THEN 0.0
 			ELSE NULLIF(assessment11_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment12_type,
@@ -135,8 +135,8 @@ BEGIN;
 			WHEN  assessment12_amount ='' THEN 0.0
 			ELSE NULLIF(assessment12_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment13_type,
@@ -145,8 +145,8 @@ BEGIN;
 			WHEN  assessment13_amount ='' THEN 0.0
 			ELSE NULLIF(assessment13_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment14_type,
@@ -155,8 +155,8 @@ BEGIN;
 			WHEN  assessment14_amount ='' THEN 0.0
 			ELSE NULLIF(assessment14_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment15_type,
@@ -165,8 +165,8 @@ BEGIN;
 			WHEN  assessment15_amount ='' THEN 0.0
 			ELSE NULLIF(assessment15_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment16_type,
@@ -175,8 +175,8 @@ BEGIN;
 			WHEN  assessment16_amount ='' THEN 0.0
 			ELSE NULLIF(assessment16_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment17_type,
@@ -185,8 +185,8 @@ BEGIN;
 			WHEN  assessment17_amount ='' THEN 0.0
 			ELSE NULLIF(assessment17_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment18_type,
@@ -195,8 +195,8 @@ BEGIN;
 			WHEN  assessment18_amount ='' THEN 0.0
 			ELSE NULLIF(assessment18_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment19_type,
@@ -205,8 +205,8 @@ BEGIN;
 			WHEN  assessment19_amount ='' THEN 0.0
 			ELSE NULLIF(assessment19_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment20_type,
@@ -215,8 +215,8 @@ BEGIN;
 			WHEN  assessment20_amount ='' THEN 0.0
 			ELSE NULLIF(assessment20_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment21_type,
@@ -225,8 +225,8 @@ BEGIN;
 			WHEN  assessment21_amount ='' THEN 0.0
 			ELSE NULLIF(assessment21_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment22_type,
@@ -235,8 +235,8 @@ BEGIN;
 			WHEN  assessment22_amount ='' THEN 0.0
 			ELSE NULLIF(assessment22_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13
-	UNION
+	FROM raw_rec35_13;
+	INSERT INTO assessments_13
 	SELECT
 		pcn,
 		assessment23_type,
@@ -245,7 +245,7 @@ BEGIN;
 			WHEN  assessment23_amount ='' THEN 0.0
 			ELSE NULLIF(assessment23_amount, '0.0')::numeric
 		END
-	FROM raw_rec35_13;
+	FROM raw_rec35_13;;
 
 	INSERT INTO tax_13
 	SELECT
